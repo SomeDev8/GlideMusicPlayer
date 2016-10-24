@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/slidingList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoPanelHeight="28dp"
+        sothree:umanoShadowHeight="4dp"
+        sothree:umanoScrollableView="@+id/songList">
+
+        <!-- MAIN COMPONENT -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/songText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="5dp"
+                android:clickable="true"
+                android:focusable="false"
+                android:text="Song"
+                android:textColor="@color/colorPrimaryDark"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/ArtistText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/songText"
+                android:clickable="true"
+                android:focusable="false"
+                android:text="Artist"
+                android:textColor="@color/colorPrimaryDark"
+                android:focusableInTouchMode="true"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/AlbumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/songText"
+                android:clickable="true"
+                android:focusable="false"
+                android:text="Album"
+                android:textColor="@color/colorPrimaryDark"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="play"
+                android:layout_below="@+id/songText"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/play"
+                android:layout_centerVertical="true"
+                android:layout_below="@+id/songText"
+                android:text="Prev"/>
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/songText"
+                android:layout_toRightOf="@+id/play"
+                android:text="Next"/>
+
+            <Button
+                android:id="@+id/shuffle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="shuffle"
+                android:layout_below="@+id/prev"
+                android:layout_margin="10dp"/>
+
+
+        </RelativeLayout>
+
+        <!-- SECONDARY COMPONENT -->
+
+        <LinearLayout
+            android:id="@+id/dragView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:clickable="true"
+            android:focusable="false"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_centerHorizontal="true"
+                    android:text="Glide Music Player"
+                    android:textSize="14sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/songPanel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/songButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/artistButton"
+                    android:layout_toStartOf="@+id/artistButton"
+                    android:text="Song"/>
+
+                <Button
+                    android:id="@+id/artistButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Artist"/>
+
+                <Button
+                    android:id="@+id/albumButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/artistButton"
+                    android:layout_toEndOf="@+id/artistButton"
+                    android:text="Album"/>
+
+                <ListView
+                    android:id="@+id/songList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp">
+                </ListView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>
